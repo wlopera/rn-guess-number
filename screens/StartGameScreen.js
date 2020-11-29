@@ -5,6 +5,7 @@ import Input from "../components/Input";
 import NumberContainer from "../components/NumberContainer";
 import TitleText from "../components/TitleText";
 import BodyText from "../components/BodyText";
+import MainButton from "../components/MainButton";
 
 import colors from "../constants/colors";
 
@@ -48,7 +49,7 @@ const StartGameScreen = (props) => {
       <Card style={styles.summaryContainer}>
         <Text>Número seleccionado</Text>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button title="INICIAR JUEGO" onPress={() => props.onStartGame(selectedNumber)} />
+        <MainButton onClick={() => props.onStartGame(selectedNumber)}>INICIAR JUEGO</MainButton>
       </Card>
     );
   }
@@ -137,8 +138,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    width: 300,
-    height: 300,
+    width: 250,
+    height: 250,
     borderRadius: 150,
     borderWidth: 3,
     borderColor: "black",

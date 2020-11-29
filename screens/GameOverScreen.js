@@ -1,7 +1,8 @@
 import React from "react";
-import { View, StyleSheet, Button, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text } from "react-native";
 import TitleText from "../components/TitleText";
 import BodyText from "../components/BodyText";
+import MainButton from "../components/MainButton";
 
 import Colors from "../constants/colors";
 
@@ -21,7 +22,7 @@ const GameOverScreen = (props) => {
           El número a buscar era: <Text style={styles.highlight}>{props.userNumber}</Text>
         </BodyText>
       </View>
-      <Button title="Nuevo Juego" onPress={props.onRestart} />
+      <MainButton onClick={props.onRestart}>Nuevo Juego</MainButton>
     </View>
   );
 };
