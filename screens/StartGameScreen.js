@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard, Alert, Image } from "react-native";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import NumberContainer from "../components/NumberContainer";
+import TitleText from "../components/TitleText";
+import BodyText from "../components/BodyText";
 
 import colors from "../constants/colors";
 
@@ -58,9 +60,19 @@ const StartGameScreen = (props) => {
       }}
     >
       <View style={styles.screen}>
-        <Text style={styles.title}>Nuevo Juego</Text>
+        <View style={styles.imageContainer}>
+          <Image
+            fadeDuration={1000}
+            style={styles.image}
+            source={{
+              uri: "https://albaciudad.org/wp-content/uploads/2018/05/994-768x541.jpg",
+            }}
+            resizeMode="cover"
+          />
+        </View>
+        <TitleText style={styles.title}>Nuevo Juego</TitleText>
         <Card style={styles.inputContainer}>
-          <Text>Seleccione un número</Text>
+          <BodyText>Seleccione un número</BodyText>
           <Input
             styles={styles.input}
             autoCorrect={false}
@@ -96,6 +108,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     marginVertical: 10,
+    fontFamily: "open-sans-bold",
   },
 
   inputContainer: {
@@ -112,7 +125,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    width: "45%",
+    width: "50%",
   },
 
   input: {
@@ -122,6 +135,18 @@ const styles = StyleSheet.create({
   summaryContainer: {
     marginTop: 20,
     alignItems: "center",
+  },
+  imageContainer: {
+    width: 300,
+    height: 300,
+    borderRadius: 150,
+    borderWidth: 3,
+    borderColor: "black",
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: "100%",
   },
 });
 
